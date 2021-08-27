@@ -12,7 +12,7 @@ import static io.restassured.RestAssured.given;
 
 public class Account
 {
-    private static Logger log = LogManager.getLogger(Account.class);
+    private static final Logger log = LogManager.getLogger(Account.class);
     Credentials credentials = Credentials.getCredentials();
     CreateGet createGet = CreateGet.getCreate();
     String category ="account";
@@ -24,7 +24,7 @@ public class Account
     public void getDetails()
     {
         String url= createGet.create(category,"","",apiKey);
-        log.error("url "+url);
+        log.info("url "+url);
         given().get(url).then().statusCode(401);
     }
 

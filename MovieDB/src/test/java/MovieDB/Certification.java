@@ -1,36 +1,38 @@
 package MovieDB;
 
-import static io.restassured.RestAssured.given;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import utils.Credentials;
 import utils.createUrl.CreateGet;
+
 import java.io.IOException;
 
-public class Authentication
+import static io.restassured.RestAssured.given;
+
+public class Certification
 {
-    private static final Logger log = LogManager.getLogger(Authentication.class);
+    private static final Logger log = LogManager.getLogger(Certification.class);
     Credentials credentials = Credentials.getCredentials();
     CreateGet createGet = CreateGet.getCreate();
-    String category ="authentication";
+    String category ="certification";
     String apiKey = credentials.getApiKey();
-    public Authentication() throws IOException {
+    public Certification() throws IOException {
     }
 
     @Test
-    public void getCreateGuestSesion()
+    public void getMovieCertification()
     {
-        String url= createGet.create(category,"guest_session","new",apiKey);
+        String url= createGet.create(category,"movie","list",apiKey);
         log.info("url "+url);
-        log.info("Test get Create Guest Session passed");
         given().get(url).then().statusCode(200);
     }
     @Test
-    public void getRequestToken()
+    public void getTvCertification()
     {
-        String url= createGet.create(category,"token","new",apiKey);
+        String url= createGet.create(category,"tv","list",apiKey);
         log.info("url "+url);
         given().get(url).then().statusCode(200);
     }
+
 }
