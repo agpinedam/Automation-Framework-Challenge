@@ -2,7 +2,10 @@ package MovieDB;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.junit.Test;
+import org.skyscreamer.jsonassert.JSONAssert;
 import utils.Credentials;
 import utils.createUrl.CreateGet;
 
@@ -26,6 +29,12 @@ public class Account
         String url= createGet.create(category,"","",apiKey);
         log.info("url "+url);
         given().get(url).then().statusCode(401);
+    }
+    @Test
+    public void getDetailsJson() throws JSONException {
+        JSONObject json = new JSONObject();
+        json.put("success",true);
+        JSONAssert.assertEquals("{success:true}",json,false);
     }
 
 }
