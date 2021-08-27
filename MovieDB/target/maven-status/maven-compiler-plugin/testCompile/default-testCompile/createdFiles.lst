@@ -1,5 +1,7 @@
-MovieDB\Authentication.class
+utils\Json\GetJson.class
 utils\createUrl\CreateGet.class
+utils\Json\GetAttributes.class
+MovieDB\Authentication.class
 utils\Credentials.class
 MovieDB\Account.class
 MovieDB\Certification.class
