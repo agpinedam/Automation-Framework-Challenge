@@ -1,22 +1,22 @@
 package utils.createUrl;
 
+import java.util.Objects;
+
 public class CreateGet {
-    private static CreateGet createGet;
-    private StringBuilder url= new StringBuilder();
-    private String domain = "https://api.themoviedb.org/3/";
-    private String equals ="?api_key=";
+    private final StringBuilder url= new StringBuilder();
+    String domain = "https://api.themoviedb.org/3/";
+    String equals = "?api_key=";
 
     public static CreateGet getCreate() {
-        createGet=new CreateGet();
-        return  createGet;
+        return new CreateGet();
     }
 
     public String create(String category, String subCategory,String complement,String apiKey) {
-        url.append(domain+category);
-        if(subCategory!=""){url.append("/");}
+        url.append(domain).append(category);
+        if(!Objects.equals(subCategory, "")){url.append("/");}
         url.append(subCategory);
-        if(complement!=""){url.append("/");}
-        url.append(complement+equals+apiKey);
+        if(!Objects.equals(complement, "")){url.append("/");}
+        url.append(complement).append(equals).append(apiKey);
         return url.toString();
     }
 }
