@@ -28,8 +28,6 @@ public class Credentials {
         if(credentials==null){
             credentials = new Credentials();
             credentials.readCredentials();
-        }else {
-            System.out.println("Error ");
         }
         return credentials;
     }

@@ -1,2 +1,5 @@
+MovieDB\Authentication.class
+utils\createUrl\CreateGet.class
+utils\GetDetails.class
+utils\Credentials.class
 MovieDB\SampleTest.class
-MovieDB\AppTest.class
