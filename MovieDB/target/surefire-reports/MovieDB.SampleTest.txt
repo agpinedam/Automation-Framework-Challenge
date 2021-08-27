@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: MovieDB.SampleTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 4.459 s <<< FAILURE! - in MovieDB.SampleTest
+test(MovieDB.SampleTest)  Time elapsed: 0.026 s  <<< FAILURE!
+java.lang.AssertionError: Expected result was incorrect expected:<3> but was:<4>
+	at MovieDB.SampleTest.test(SampleTest.java:23)
+
